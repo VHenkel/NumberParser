@@ -130,3 +130,39 @@ classDiagram
     Program --> IFileReader
     Program --> IDigitScanner
 ```
+
+## Ablauf-Diagramm
+
+```mermaid
+flowchart TD
+    A[Start] --> B[Container erstellen]
+    B --> C[Datei lesen]
+    C --> D{Datei vorhanden?}
+    D -->|Nein| E[Fehler ausgeben]
+    E --> F[Programm beenden]
+    D -->|Ja| G[Content scannen]
+
+    G --> H{Zeilen vorhanden?}
+    H -->|Ja| I[Zeile verarbeiten]
+    H -->|Nein| Z[Scan beenden]
+
+    I --> J{Leerzeichen?}
+    J -->|Ja| K[Spalte überspringen]
+    J -->|Nein| L[Parser suchen]
+
+    L --> M{Parser gefunden?}
+    M -->|Ja| N[Parsen]
+    N --> O[Ziffer ausgeben]
+    O --> P[Spalte weiter]
+
+    M -->|Nein| Q[Unbekannt ausgeben]
+    Q --> R[Fehler loggen]
+
+    K --> S[Nächste Spalte]
+    P --> S
+    R --> S
+
+    S --> H
+    Z --> T[Ausgabe abschließen]
+    T --> U[Ende]
+```
