@@ -177,5 +177,6 @@ Schritte:
 2. Im Projektordner ein Terminal öffnen
 3. Anwendung starten mit:
 ```bash
+cd number-parser
 dotnet run
 ```
