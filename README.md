@@ -166,3 +166,16 @@ flowchart TD
     Z --> T[Ausgabe abschließen]
     T --> U[Ende]
 ```
+## Installation & Ausführung
+
+Voraussetzungen:
+- Installiertes .NET SDK
+
+Schritte:
+
+1. Repository klonen oder Projektdateien herunterladen
+2. Im Projektordner ein Terminal öffnen
+3. Anwendung starten mit:
+```bash
+dotnet run
+```
